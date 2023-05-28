@@ -1,0 +1,152 @@
+{{-- @extends('app-layouts.admin.index')
+
+@section('content')
+    <div class="content-wrapper">
+        <section>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card my-4">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h5>Tambah Kader</h5>
+                            </div>
+                        </div>
+                        <div class="card-shadow">
+                            <div class="card-body">
+                                <form action="/dashboard/kader/{{ $data->id }}" method="POST">
+                                    @method('PUT')
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"" name="nama" placeholder="Nama" value="{{ $data->nama }}">
+                                        @error('nama')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat">Alamat</label>
+                                        <textarea name="alamat" id="alamat" cols="20" rows="5" class="form-control @error('alamat') is-invalid @enderror">{{ $data->alamat }}</textarea>
+                                        @error('alamat')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="umur">Umur</label>
+                                        <input type="text" class="form-control @error('umur') is-invalid @enderror"" name="umur" placeholder="Umur" value="{{ $data->umur }}">
+                                        @error('umur')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jabatan">Jabatan</label>
+                                        <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan" placeholder="Jabatan" value="{{ $data->jabatan }}">
+                                        @error('jabatan')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Status</label>
+                                        <input type="text" class="form-control @error('status') is-invalid @enderror"" name="status" placeholder="status" value="{{ $data->status }}">
+                                        @error('status')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <button class="btn btn-primary btn-block" type="submit">Simpan</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+@endsection --}}
+
+@extends('app-layouts.admin.index')
+
+@section('content')
+<div class="main-content">
+    <section class="section">
+      <div class="section-header">
+        <h1>Update Data</h1>
+      </div>
+      <div class="section-body">
+        <h2 class="section-title">Form Input Data Ibu Hamil</h2>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <form action="/dashboard/bumil/{{ $data->id }}" method="POST">
+                @method('PUT')
+                @csrf
+                <div class="card-header">
+                  <h4>Masukkan Data Ibu Hamil Dengan Sesuai</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nama_ibu">Nama Ibu</label>
+                        <input type="text" class="form-control @error('nama_ibu') is-invalid @enderror"" name="nama_ibu" placeholder="Nama Ibu" value="{{ $data->nama_ibu }}">
+                        @error('nama_ibu')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="NIK">NIK</label>
+                        <input type="text" class="form-control @error('NIK') is-invalid @enderror"" name="NIK" placeholder="NIK" value="{{ $data->NIK }}">
+                        @error('NIK')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="umur">Umur</label>
+                        <input type="text" class="form-control @error('umur') is-invalid @enderror"" name="umur" placeholder="Umur" value="{{ $data->umur }}">
+                        @error('umur')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <textarea name="alamat" id="alamat" cols="20" rows="5" class="form-control @error('alamat') is-invalid @enderror">{{ $data->alamat }}</textarea>
+                        @error('alamat')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="masa_kehamilan">Masa Kehamilan</label>
+                        <input type="text" class="form-control @error('masa_kehamilan') is-invalid @enderror"" name="masa_kehamilan" placeholder="Masa Kehamilan" value="{{ $data->masa_kehamilan }}">
+                        @error('masa_kehamilan')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+@endsection
